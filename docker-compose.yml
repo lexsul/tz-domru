@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    network_mode: host
+    ports:
+      - 443:443
+      - 80:80
+      - 22:22
+    volumes:
+      - /srv/gitlab/config:/etc/gitlab
+      - /srv/gitlab/logs:/var/log/gitlab
+      - /srv/gitlab/data:/var/opt/gitlab
+    environment:
+      - GITLAB_OMNIBUS_CONFIG="external_url 'http://my.domain.com/'; gitlab_rails['lfs_enabled'] = true;"
