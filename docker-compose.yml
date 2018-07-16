@@ -14,4 +14,4 @@ services:
       - /srv/gitlab/logs:/var/log/gitlab
       - /srv/gitlab/data:/var/opt/gitlab
     environment:
-      - GITLAB_OMNIBUS_CONFIG="external_url 'http://my.domain.com/'; gitlab_rails['lfs_enabled'] = true;"
+      - GITLAB_OMNIBUS_CONFIG="external_url 'http://test.host/'; gitlab_rails['lfs_enabled'] = true;"
